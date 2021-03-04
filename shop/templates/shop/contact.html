@@ -1,0 +1,38 @@
+{%   extends 'shop/basic.html'%}
+{%block tittle%}{%endblock%}
+{%block body%}
+<div class="container">
+
+ <form action="/shop/contact/" method="post">{% csrf_token %}
+   <div class="form-group">
+    <label for="name">name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="enter your name here">
+  </div>
+        <div class="form-group">
+    <label for="name">email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="enter your email here">
+  </div>
+        <div class="form-group">
+    <label for="name">phone no</label>
+    <input type="tel" class="form-control" id="phone" name="phone" placeholder="enter your mobile no here">
+  </div>
+        <div class="form-group">
+    <label for="desc">how can we help you ?</label>
+    <textarea class="form-control" id="desc"  name='desc' rows="3"></textarea>
+  </div>
+
+<button type="submit" class="btn btn-success"> submit</button>
+
+</form>
+
+</div>
+<script>
+{% if thanks %}
+ alert("thanks for your appreciations")
+ document.location = "/shop";
+{% endif %}
+
+
+
+</script>
+{%endblock%}
